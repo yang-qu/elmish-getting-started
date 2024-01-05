@@ -46,22 +46,46 @@ export function update(msg, state) {
 }
 
 export function render(state, dispatch) {
-    const children = ofArray([createElement("button", {
-        onClick: (_arg) => {
-            dispatch(new Msg(0, []));
-        },
-        children: "Increment",
-    }), createElement("button", {
-        onClick: (_arg_1) => {
-            dispatch(new Msg(1, []));
-        },
-        children: "Decrement",
-    }), createElement("h1", {
-        children: [state.Count],
-    })]);
-    return createElement("div", {
-        children: Interop_reactApi.Children.toArray(Array.from(children)),
+    const headerText = ((state.Count % 2) === 0) ? "Count is even" : "Count is odd";
+    const oddOrEvenMessage = createElement("h1", {
+        children: [headerText],
     });
+    if (state.Count < 0) {
+        const children = ofArray([createElement("button", {
+            onClick: (_arg) => {
+                dispatch(new Msg(0, []));
+            },
+            children: "+",
+        }), createElement("div", {
+            children: [state.Count],
+        }), createElement("button", {
+            onClick: (_arg_1) => {
+                dispatch(new Msg(1, []));
+            },
+            children: "-",
+        })]);
+        return createElement("div", {
+            children: Interop_reactApi.Children.toArray(Array.from(children)),
+        });
+    }
+    else {
+        const children_2 = ofArray([createElement("button", {
+            onClick: (_arg_2) => {
+                dispatch(new Msg(0, []));
+            },
+            children: "+",
+        }), createElement("div", {
+            children: [state.Count],
+        }), createElement("button", {
+            onClick: (_arg_3) => {
+                dispatch(new Msg(1, []));
+            },
+            children: "-",
+        }), oddOrEvenMessage]);
+        return createElement("div", {
+            children: Interop_reactApi.Children.toArray(Array.from(children_2)),
+        });
+    }
 }
 
 ProgramModule_run(Program_withReactSynchronous("elmish-app", ProgramModule_mkSimple(init, update, render)));
