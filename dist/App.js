@@ -1,8 +1,7 @@
 import { Union, Record } from "./fable_modules/fable-library.4.9.0/Types.js";
 import { union_type, record_type, int32_type } from "./fable_modules/fable-library.4.9.0/Reflection.js";
 import { createElement } from "react";
-import { createObj } from "./fable_modules/fable-library.4.9.0/Util.js";
-import { singleton, delay, toList } from "./fable_modules/fable-library.4.9.0/Seq.js";
+import { defaultOf } from "./fable_modules/fable-library.4.9.0/Util.js";
 import { ofArray } from "./fable_modules/fable-library.4.9.0/List.js";
 import { Interop_reactApi } from "./fable_modules/Feliz.2.7.0/Interop.fs.js";
 import { ProgramModule_mkSimple, ProgramModule_run } from "./fable_modules/Fable.Elmish.4.0.0/program.fs.js";
@@ -48,10 +47,10 @@ export function update(msg, state) {
 }
 
 export function render(state, dispatch) {
-    const oddOrEvenMessage = createElement("h1", {
-        style: createObj(toList(delay(() => ((state.Count < 0) ? singleton(["display", "none"]) : singleton(["display", "block"]))))),
-        children: ((state.Count % 2) === 0) ? "Count is even" : "Count is odd",
-    });
+    const headerText = ((state.Count % 2) === 0) ? "Count is even" : "Count is odd";
+    const oddOrEvenMessage = (state.Count >= 0) ? createElement("h1", {
+        children: [headerText],
+    }) : defaultOf();
     const children = ofArray([createElement("button", {
         onClick: (_arg) => {
             dispatch(new Msg(0, []));

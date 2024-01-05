@@ -19,26 +19,20 @@ let update (msg: Msg) (state: State) : State =
     | Decrement -> { state with Count = state.Count - 1 }
 
 let render (state: State) (dispatch: Msg -> unit) =
-    let oddOrEvenMessage =
-        Html.h1
-            [ prop.style
-                  [ if state.Count < 0 then
-                        style.display.none
-                    else
-                        style.display.block ]
+    let headerText =
+        if state.Count % 2 = 0 then
+            "Count is even"
+        else
+            "Count is odd"
 
-              prop.text (
-                  if state.Count % 2 = 0 then
-                      "Count is even"
-                  else
-                      "Count is odd"
-              ) ]
+    let oddOrEvenMessage = if state.Count >= 0 then Html.h1 headerText else Html.none
 
     Html.div
         [ Html.button [ prop.onClick (fun _ -> dispatch Increment); prop.text "+" ]
           Html.div state.Count
           Html.button [ prop.onClick (fun _ -> dispatch Decrement); prop.text "-" ]
           oddOrEvenMessage ]
+
 
 
 
