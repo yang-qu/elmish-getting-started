@@ -25,7 +25,7 @@ let render (state: State) (dispatch: Msg -> unit) =
         else
             "Count is odd"
 
-    let oddOrEvenMessage = Html.h1 headerText
+    let oddOrEvenMessage = Html.h1 [ prop.text headerText; prop.classes [ "shiny" ] ]
 
     Html.div
         [ yield Html.button [ prop.onClick (fun _ -> dispatch Increment); prop.text "+" ]
