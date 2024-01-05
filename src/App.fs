@@ -25,16 +25,14 @@ let render (state: State) (dispatch: Msg -> unit) =
         else
             "Count is odd"
 
-    let oddOrEvenMessage = if state.Count >= 0 then Html.h1 headerText else Html.none
+    let oddOrEvenMessage = Html.h1 headerText
 
     Html.div
-        [ Html.button [ prop.onClick (fun _ -> dispatch Increment); prop.text "+" ]
-          Html.div state.Count
-          Html.button [ prop.onClick (fun _ -> dispatch Decrement); prop.text "-" ]
-          oddOrEvenMessage ]
-
-
-
+        [ yield Html.button [ prop.onClick (fun _ -> dispatch Increment); prop.text "+" ]
+          yield Html.div state.Count
+          yield Html.button [ prop.onClick (fun _ -> dispatch Decrement); prop.text "-" ]
+          if state.Count >= 0 then
+              yield oddOrEvenMessage ]
 
 Program.mkSimple init update render
 |> Program.withReactSynchronous "elmish-app"
