@@ -5,6 +5,7 @@
   <ItemGroup>
     <Compile Include="App.fs" />
     <Compile Include="TextualInputs.fs" />
+    <Compile Include="NumericInputsRawAndParsed.fs" />
     <Compile Include="NumericInputs.fs" />
   </ItemGroup>
   <ItemGroup>
