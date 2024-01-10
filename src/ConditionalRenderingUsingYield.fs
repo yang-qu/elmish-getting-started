@@ -1,4 +1,4 @@
-module App
+module ConditionalRenderingUsingYield
 
 open Elmish
 open Elmish.React
