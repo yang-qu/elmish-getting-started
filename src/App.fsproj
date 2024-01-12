@@ -11,10 +11,12 @@
     <Compile Include="CounterWithCommands.fs" />
     <Compile Include="FromAsync.fs" />
     <Compile Include="AsynchronousUpdates.fs" />
+    <Compile Include="ModellingAsyncState.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="4.2.0" />
     <PackageReference Include="Fable.Elmish.React" Version="4.0.0" />
     <PackageReference Include="Feliz" Version="2.7.0" />
+    <PackageReference Update="FSharp.Core" Version="8.0.101" />
   </ItemGroup>
 </Project>
