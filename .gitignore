@@ -203,3 +203,6 @@ main.js
 
 # Fable
 fable_modules/
+
+# build 
+dist/
