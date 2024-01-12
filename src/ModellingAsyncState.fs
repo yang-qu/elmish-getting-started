@@ -1,4 +1,4 @@
-﻿module App.ModellingAsyncState
+﻿module ModellingAsyncState
 
 open Elmish
 open Elmish.React

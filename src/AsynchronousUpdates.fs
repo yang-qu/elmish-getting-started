@@ -1,4 +1,4 @@
-﻿module App.AsyncUpdates
+﻿module AsyncUpdates
 
 open Elmish
 open Elmish.React

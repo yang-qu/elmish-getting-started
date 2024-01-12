@@ -1,4 +1,4 @@
-﻿module App.FromAsync
+﻿module FromAsync
 
 open Elmish
 open Elmish.React

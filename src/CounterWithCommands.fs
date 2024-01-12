@@ -1,4 +1,4 @@
-﻿module App.CounterWithCommands
+﻿module CounterWithCommands
 
 open Elmish
 open Elmish.React

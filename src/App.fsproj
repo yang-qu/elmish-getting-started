@@ -12,6 +12,8 @@
     <Compile Include="FromAsync.fs" />
     <Compile Include="AsynchronousUpdates.fs" />
     <Compile Include="ModellingAsyncState.fs" />
+    <Compile Include="Deferred.Types.fs" />
+    <Compile Include="Deferred.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="4.2.0" />
