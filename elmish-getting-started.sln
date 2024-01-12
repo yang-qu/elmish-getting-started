@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 		counter-with-command.html = counter-with-command.html
 		from-async.html = from-async.html
 		modelling-async-state.html = modelling-async-state.html
+		simple-timer.html = simple-timer.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dist", "dist", "{9399416A-20C5-4F41-B0A7-2D8F73B93334}"

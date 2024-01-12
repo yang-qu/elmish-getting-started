@@ -4,20 +4,6 @@ open Elmish
 open Elmish.React
 open Feliz
 
-module Cmd =
-    let fromAsync (operation: Async<'msg>) : Cmd<'msg> =
-        let delayedCmd (dispatch: 'msg -> unit) : unit =
-            let delayedDispatch =
-                async {
-                    let! msg = operation
-                    dispatch msg
-                }
-
-            Async.StartImmediate delayedDispatch
-
-        Cmd.ofEffect delayedCmd
-
-
 type AsyncOperationStatus<'t> =
     | Started
     | Finished of 't

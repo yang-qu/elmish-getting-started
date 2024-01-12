@@ -3,6 +3,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Deferred.Types.fs" />
+    <Compile Include="Deferred.fs" />
+    <Compile Include="Cmd.fs" />
     <Compile Include="ConditionalRenderingUsingYield.fs" />
     <Compile Include="TextualInputs.fs" />
     <Compile Include="NumericInputsRawAndParsed.fs" />
@@ -12,8 +15,7 @@
     <Compile Include="FromAsync.fs" />
     <Compile Include="AsynchronousUpdates.fs" />
     <Compile Include="ModellingAsyncState.fs" />
-    <Compile Include="Deferred.Types.fs" />
-    <Compile Include="Deferred.fs" />
+    <Compile Include="SimpleTimer.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="4.2.0" />
