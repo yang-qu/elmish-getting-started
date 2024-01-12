@@ -9,6 +9,7 @@
     <Compile Include="NumericInputs.fs" />
     <Compile Include="Counter.fs" />
     <Compile Include="CounterWithCommands.fs" />
+    <Compile Include="FromAsync.fs" />
     <Compile Include="AsynchronousUpdates.fs" />
   </ItemGroup>
   <ItemGroup>
