@@ -26,7 +26,7 @@ let update (msg: Msg) (state: State) =
 let init() = { CurrentTime = DateTime.Now }, Cmd.ofMsg Tick
 
 let formatTime (time: DateTime) =
-    sprintf "%02d:%02d:%02d" time.Hour time.Minute time.Second
+    $"{time.Hour}:{time.Minute}:{time.Second}" 
 
 let render (state: State) (dispatch: Msg -> unit) =
     Html.div [
